@@ -2,14 +2,18 @@ const slides = document.querySelectorAll('.carousel-slide');
 const stopButton = document.getElementById('stopButton');
 const resumeButton = document.getElementById('resumeButton');
 const progressBar = document.querySelector('.progress');
+const audio = document.getElementById('somAtual')
+const API_KEY = "300a90f59f474267bdfe74a93c450acc"
+let ext = ".m4a";
+
 let currentSlideIndex = 0;
 let intervalId;
 let progress = 0;
-const slideDuration = 17500; // Tempo em milissegundos para cada slide
+const slideDuration = 5000; // Tempo em milissegundos para cada slide
 
 function showSlide(index) {
     slides.forEach(slide => slide.classList.remove('active'));
-    slides[index].classList.add('active');
+    slides[index].classList.add('active');	
     progress = 0;
     progressBar.style.width = '0%';
 }
